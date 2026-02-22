@@ -87,7 +87,7 @@ En esta sección deben incluirse imágenes de:
 
 Ejemplo de inserción de imagen en Markdown:
 
-    ![Interfaz Principal](docs/interfaz.jpeg)
+    [Interfaz Principal](docs/interfaz.jpeg)
 
 Las imágenes deben almacenarse en la carpeta `/docs/` o `/assets/` según
 la estructura solicitada.
