@@ -2,7 +2,7 @@
 
 ## 📌 Portada
 
-**Nombre completo:** Ángel Hernández\
+**Nombre completo:** Angel Hernández\
 **Número de carné:** 202425514\
 **Curso:** Autómatas y Lenguajes\
 **Proyecto:** Compilador MicroC
@@ -113,7 +113,7 @@ El video demostrativo muestra:
 -   Detección de errores
 -   Funcionamiento del botón Ayuda
 
-🔗 Enlace al video: https://youtu.be/En2otqebdv8
+🔗 Enlace al video: https://youtu.be/8Fx_sU_dBjY
 
 ------------------------------------------------------------------------
 
