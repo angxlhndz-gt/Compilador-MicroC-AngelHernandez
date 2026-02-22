@@ -81,24 +81,24 @@ También puede ejecutarse desde el acceso directo creado en el escritorio
 
 -   Interfaz principal del programa
 
-![Interfaz Principal](docs/interfaz.png)
+![Interfaz Principal](assets/interfaz.png)
 
 -   Ejemplo de compilación exitosa
 
-![Interfaz Principal](docs/compilacion.png)
+![Interfaz Principal](assets/compilacion.png)
 
 -   Ejemplo de error detectado
 
-![Interfaz Principal](docs/error1.png)
+![Interfaz Principal](assets/error1.png)
 
-![Interfaz Principal](docs/error2.png)
+![Interfaz Principal](assets/error2.png)
 
 -   Ventana de ayuda
 
-![Interfaz Principal](docs/ayuda.png)
+![Interfaz Principal](assets/ayuda.png)
 
 
-Las imágenes estan almacenadas en la carpeta `/docs/` según la estructura solicitada.
+Las imágenes estan almacenadas en la carpeta `/assets/` según la estructura solicitada.
 
 ------------------------------------------------------------------------
 
@@ -128,6 +128,18 @@ El repositorio está organizado de la siguiente manera:
     README.md    → Documentación principal del proyecto
 
 ------------------------------------------------------------------------
+
+## 📄 Documentación
+
+La documentación completa del proyecto, incluyendo el manual de usuario, descripción técnica y capturas de pantalla, se encuentra disponible en la carpeta /docs/ dentro de este repositorio.
+
+En dicha carpeta se incluyen:
+
+Manual de Usuario en formato Word (.docx)
+
+Capturas de pantalla del sistema
+
+Documentación complementaria del proyecto
 
 ## 🚀 Versión Final
 
