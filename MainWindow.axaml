@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MicroC.MainWindow"
+        Title="MicroC - Sin archivo"
+        Width="1000"
+        Height="600">
+
+    <DockPanel>
+
+        <!-- Barra superior -->
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="#2D2D30" Height="40">
+
+            <Button Content="Nuevo" Width="80" Margin="5" Click="Nuevo_Click"/>
+            <Button Content="Abrir" Width="80" Margin="5" Click="Abrir_Click"/>
+            <Button Content="Guardar" Width="80" Margin="5" Click="Guardar_Click"/>
+            <Button Content="Editar" Width="80" Margin="5" Click="Editar_Click"/>
+            <Button Content="Compilar" Click="Compilar_Click"/>
+            <Button Content="Ayuda" Width="80" Margin="5" Click="Ayuda_Click"/>
+            <Button Content="Salir" Click="Salir_Click"/>
+
+        </StackPanel>
+
+        <!-- Área principal -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <!-- TextBox1 (Editor de código) -->
+        <TextBox Name="EditorTextBox"
+         AcceptsReturn="True"
+         FontFamily="Consolas"
+         FontSize="14"
+         TextChanged="EditorTextBox_TextChanged"/>
+
+            <!-- TextBox2 (Salida de compilación) -->
+        <ScrollViewer Grid.Row="1" Margin="5">
+            <TextBox Name="OutputTextBox"
+                AcceptsReturn="True"
+                IsReadOnly="True"
+                Background="#1E1E1E"
+                Foreground="White"
+                FontFamily="Consolas"
+                FontSize="13"/>
+        </ScrollViewer>
+        </Grid>
+
+    </DockPanel>
+
+</Window>
