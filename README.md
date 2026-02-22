@@ -98,8 +98,7 @@ También puede ejecutarse desde el acceso directo creado en el escritorio
 ![Interfaz Principal](docs/ayuda.png)
 
 
-Las imágenes deben almacenarse en la carpeta `/docs/` o `/assets/` según
-la estructura solicitada.
+Las imágenes estan almacenadas en la carpeta `/docs/` según la estructura solicitada.
 
 ------------------------------------------------------------------------
 
