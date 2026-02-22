@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MicroC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9baf1bbdd9e2bc1fc9d9cd6f9d6f76f22822d9f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abf90f3d8343a60265108fa61ed719dac00c537f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicroC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicroC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
