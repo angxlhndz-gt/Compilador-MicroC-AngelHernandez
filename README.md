@@ -78,16 +78,25 @@ También puede ejecutarse desde el acceso directo creado en el escritorio
 
 ## 🖼 Capturas de Pantalla
 
-En esta sección deben incluirse imágenes de:
 
 -   Interfaz principal del programa
+
+![Interfaz Principal](docs/interfaz.png)
+
 -   Ejemplo de compilación exitosa
+
+![Interfaz Principal](docs/compilacion.png)
+
 -   Ejemplo de error detectado
+
+![Interfaz Principal](docs/error1.png)
+
+![Interfaz Principal](docs/error2.png)
+
 -   Ventana de ayuda
 
-Ejemplo de inserción de imagen en Markdown:
+![Interfaz Principal](docs/ayuda.png)
 
-![Interfaz Principal](docs/prueba.png)
 
 Las imágenes deben almacenarse en la carpeta `/docs/` o `/assets/` según
 la estructura solicitada.
