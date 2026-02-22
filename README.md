@@ -1,6 +1,6 @@
 # Compilador MicroC
 
-## 📌 Portada
+## 📌 Portada 2
 
 **Nombre completo:** Angel Hernández\
 **Número de carné:** 202425514\
