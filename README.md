@@ -9,7 +9,7 @@
 
 ------------------------------------------------------------------------
 
-## 📖 Descripción del Proyecto
+## 📖 Descripción del Proyectooo
 
 MicroC es un pre-compilador desarrollado como proyecto del curso de
 Autómatas y Lenguajes de la Universidad Mesoamericana.
