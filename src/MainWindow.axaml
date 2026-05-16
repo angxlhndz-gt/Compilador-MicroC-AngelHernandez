@@ -2,50 +2,135 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="MicroC.MainWindow"
         Title="MicroC - Sin archivo"
-        Width="1000"
-        Height="600">
+        Width="1100"
+        Height="720"
+        MinWidth="900"
+        MinHeight="620"
+        Background="#0F172A">
 
-    <DockPanel>
+    <Window.Styles>
+        <Style Selector="Button.toolbarButton">
+            <Setter Property="MinWidth" Value="86"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="14,7"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="Background" Value="#1F2937"/>
+            <Setter Property="Foreground" Value="#E5E7EB"/>
+            <Setter Property="BorderBrush" Value="#334155"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
 
-        <!-- Barra superior -->
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="#2D2D30" Height="40">
+        <Style Selector="Button.compileButton">
+            <Setter Property="MinWidth" Value="104"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="16,7"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="Background" Value="#2563EB"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#60A5FA"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Styles>
 
-            <Button Content="Nuevo" Width="80" Margin="5" Click="Nuevo_Click"/>
-            <Button Content="Abrir" Width="80" Margin="5" Click="Abrir_Click"/>
-            <Button Content="Guardar" Width="80" Margin="5" Click="Guardar_Click"/>
-            <Button Content="Editar" Width="80" Margin="5" Click="Editar_Click"/>
-            <Button Content="Compilar" Width="90" Margin="5" Click="Compilar_Click"/>
-            <Button Content="Ayuda" Width="80" Margin="5" Click="Ayuda_Click"/>
-            <Button Content="Salir" Width="80" Margin="5" Click="Salir_Click"/>
+    <Border Background="#0F172A" Padding="18">
+        <DockPanel LastChildFill="True">
 
-        </StackPanel>
+            <!-- Barra superior -->
+            <Border DockPanel.Dock="Top"
+                    Background="#111827"
+                    BorderBrush="#243044"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="12"
+                    Margin="0,0,0,16">
+                <StackPanel Orientation="Horizontal">
 
-        <!-- Área principal -->
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="2*"/>
-            </Grid.RowDefinitions>
+                    <Button Classes="toolbarButton" Content="Nuevo" Click="Nuevo_Click"/>
+                    <Button Classes="toolbarButton" Content="Abrir" Click="Abrir_Click"/>
+                    <Button Classes="toolbarButton" Content="Guardar" Click="Guardar_Click"/>
+                    <Button Classes="toolbarButton" Content="Editar" Click="Editar_Click"/>
+                    <Button Classes="compileButton" Content="Compilar" Click="Compilar_Click"/>
+                    <Button Classes="toolbarButton" Content="Ayuda" Click="Ayuda_Click"/>
+                    <Button Classes="toolbarButton" Content="Salir" Click="Salir_Click"/>
 
-            <!-- TextBox1 (Editor de código) -->
-        <TextBox Name="EditorTextBox"
-         AcceptsReturn="True"
-         FontFamily="Consolas"
-         FontSize="14"
-         TextChanged="EditorTextBox_TextChanged"/>
+                </StackPanel>
+            </Border>
 
-            <!-- TextBox2 (Salida de compilación) -->
-        <ScrollViewer Grid.Row="1" Margin="5">
-            <TextBox Name="OutputTextBox"
-                AcceptsReturn="True"
-                IsReadOnly="True"
-                Background="#1E1E1E"
-                Foreground="White"
-                FontFamily="Consolas"
-                FontSize="13"/>
-        </ScrollViewer>
-        </Grid>
+            <!-- Área principal -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
 
-    </DockPanel>
+                <!-- Editor de código -->
+                <Border Grid.Row="0"
+                        Background="#111827"
+                        BorderBrush="#334155"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Padding="12"
+                        Margin="0,0,0,14">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Top"
+                                   Text="Editor de código fuente"
+                                   Foreground="#CBD5E1"
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,0,8"/>
 
+                        <TextBox Name="EditorTextBox"
+                                 AcceptsReturn="True"
+                                 Background="#0B1020"
+                                 Foreground="#E5E7EB"
+                                 BorderBrush="#1E293B"
+                                 BorderThickness="1"
+                                 Padding="12"
+                                 FontFamily="Consolas"
+                                 FontSize="14"
+                                 TextWrapping="NoWrap"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                 TextChanged="EditorTextBox_TextChanged"/>
+                    </DockPanel>
+                </Border>
+
+                <!-- Resultado del análisis léxico -->
+                <Border Grid.Row="1"
+                        Background="#111827"
+                        BorderBrush="#334155"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Padding="12">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Top"
+                                   Text="Resultado del análisis léxico"
+                                   Foreground="#CBD5E1"
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,0,8"/>
+
+                        <TextBox Name="OutputTextBox"
+                                 AcceptsReturn="True"
+                                 IsReadOnly="True"
+                                 Background="#111827"
+                                 Foreground="#F8FAFC"
+                                 BorderBrush="#1E293B"
+                                 BorderThickness="1"
+                                 Padding="12"
+                                 FontFamily="Consolas"
+                                 FontSize="13"
+                                 TextWrapping="NoWrap"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    </DockPanel>
+                </Border>
+            </Grid>
+
+        </DockPanel>
+    </Border>
 </Window>
