@@ -242,24 +242,29 @@ También puede ejecutarse desde el acceso directo creado en el escritorio
 ## 🖼 Capturas de Pantalla
 
 
--   Interfaz principal del programa
+-   Interfaz principal actualizada del compilador MicroC
 
-![Interfaz Principal](assets/interfaz.png)
+![Interfaz Fase II](assets/interfaz_fase2.png)
 
--   Ejemplo de compilación exitosa
+-   Reconocimiento de palabras reservadas
 
-![Interfaz Principal](assets/compilacion.png)
+![Palabras reservadas](assets/palabras_reservadas.png)
 
--   Ejemplo de error detectado
+-   Reconocimiento de números enteros y reales
 
-![Interfaz Principal](assets/error1.png)
+![Números reales](assets/numeros_reales.png)
 
-![Interfaz Principal](assets/error2.png)
+-   Reconocimiento de comentarios de línea y bloque
 
--   Ventana de ayuda
+![Comentarios](assets/comentarios.png)
 
-![Interfaz Principal](assets/ayuda.png)
+-   Reconocimiento de operadores compuestos
 
+![Operadores compuestos](assets/operadores_compuestos.png)
+
+-   Detección de errores léxicos
+
+![Errores léxicos](assets/errores_lexicos.png)
 
 Las imágenes estan almacenadas en la carpeta `/assets/` según la estructura solicitada.
 
