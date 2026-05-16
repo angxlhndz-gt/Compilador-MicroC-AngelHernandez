@@ -15,12 +15,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MicroC
-build_property.ProjectDir = /home/angel/Escritorio/MicroC/src/
+build_property.ProjectDir = /home/angel/Escritorio/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[/home/angel/Escritorio/MicroC/src/App.axaml]
+[/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/angel/Escritorio/MicroC/src/MainWindow.axaml]
+[/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

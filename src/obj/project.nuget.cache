@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XUB674KUWz6/hbE4Jd686wxIoEmecVhwhCBI6nmct5hObJ1aGa8qjDjg1oWm+HQ0SNN1ce+neeH+eIM4VFdFlg==",
+  "dgSpecHash": "5jxvEBZvys1KmWjqTwOL3IVurdSDpXilkbjpKAij251RVMFrCK4tqWbvLE7e9cooRDdVC25LSWbataMpDwtmPA==",
   "success": true,
-  "projectFilePath": "/home/angel/Escritorio/MicroC/src/MicroC.csproj",
+  "projectFilePath": "/home/angel/Escritorio/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/MicroC.csproj",
   "expectedPackageFiles": [
     "/home/angel/.nuget/packages/avalonia/11.3.12/avalonia.11.3.12.nupkg.sha512",
     "/home/angel/.nuget/packages/avalonia.angle.windows.natives/2.1.25547.20250602/avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",

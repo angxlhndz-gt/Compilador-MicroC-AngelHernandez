@@ -73,3 +73,17 @@
 /home/angel/Escritorio/MicroC/src/obj/Debug/net8.0/MicroC.pdb
 /home/angel/Escritorio/MicroC/src/obj/Debug/net8.0/MicroC.genruntimeconfig.cache
 /home/angel/Escritorio/MicroC/src/obj/Debug/net8.0/ref/MicroC.dll
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/bin/Debug/net8.0/MicroC
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/bin/Debug/net8.0/MicroC.dll
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/bin/Debug/net8.0/MicroC.pdb
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.csproj.AssemblyReference.cache
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/Avalonia/Resources.Inputs.cache
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/Avalonia/resources
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.GeneratedMSBuildEditorConfig.editorconfig
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.AssemblyInfoInputs.cache
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.AssemblyInfo.cs
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.csproj.CoreCompileInputs.cache
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.sourcelink.json
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.dll
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/refint/MicroC.dll
+/media/angel/disco500/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/Debug/net8.0/MicroC.pdb

@@ -1422,11 +1422,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/angel/Escritorio/MicroC/src/MicroC.csproj",
+      "projectUniqueName": "/home/angel/Escritorio/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/MicroC.csproj",
       "projectName": "MicroC",
-      "projectPath": "/home/angel/Escritorio/MicroC/src/MicroC.csproj",
+      "projectPath": "/home/angel/Escritorio/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/MicroC.csproj",
       "packagesPath": "/home/angel/.nuget/packages/",
-      "outputPath": "/home/angel/Escritorio/MicroC/src/obj/",
+      "outputPath": "/home/angel/Escritorio/Universidad/Meso/Ingenieria en Sistemas/Quinto Semestre/Automatas y Lenguajes/MicroC/src/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/angel/.nuget/NuGet/NuGet.Config"
@@ -1490,7 +1490,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.124/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
