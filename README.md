@@ -15,14 +15,18 @@ MicroC es un pre-compilador desarrollado en Avalonia .NET como proyecto
 del curso de Autómatas y Lenguajes de la Universidad Mesoamericana.
 
 El objetivo principal del proyecto es simular el funcionamiento básico
-de un compilador para el lenguaje C. Actualmente implementa la Fase I
-del analizador léxico, permitiendo al usuario escribir código, abrir
-archivos existentes, guardar archivos y ejecutar el análisis léxico.
+de un compilador para el lenguaje C. Actualmente implementa la Fase I y
+la Fase II del analizador léxico, permitiendo al usuario escribir
+código, abrir archivos existentes, guardar archivos y ejecutar el
+análisis léxico.
 
 El sistema analiza el código ingresado y realiza:
 
 -   Generación de lista de tokens
--   Identificación de lexemas simples
+-   Identificación de lexemas simples y palabras reservadas
+-   Diferenciación entre números enteros y números reales
+-   Reconocimiento de comentarios de línea y comentarios de bloque
+-   Reconocimiento de operadores compuestos
 -   Relación de lexemas con su número de línea
 -   Ignorar espacios en blanco, tabuladores y saltos de línea
 -   Detección básica de errores léxicos
@@ -73,9 +77,10 @@ errores léxicos detectados durante el recorrido del código fuente.
 | > | 106 | Símbolo |
 | ! | 107 | Símbolo |
 | & | 108 | Símbolo |
-| `|` | 109 | Símbolo |
+| \| | 109 | Símbolo |
 | Identificador | 300 | Identificador |
-| Número | 301 | Número |
+| Número entero | 301 | NumeroEntero |
+| Número real | 302 | NumeroReal |
 | Error léxico | -1 | ErrorLexico |
 
 ### Ejemplo de análisis léxico
@@ -90,7 +95,7 @@ int main() {
 Salida resumida:
 
 ```text
-Linea: 1    Lexema: int     Token: 300    Tipo: Identificador
+Linea: 1    Lexema: int     Token: 17     Tipo: PalabraReservada
 Linea: 1    Lexema: main    Token: 300    Tipo: Identificador
 Linea: 1    Lexema: (       Token: 75     Tipo: Simbolo
 Linea: 1    Lexema: )       Token: 76     Tipo: Simbolo
@@ -99,6 +104,86 @@ Linea: 1    Lexema: {       Token: 77     Tipo: Simbolo
 Total de tokens: 17
 Errores léxicos: 0
 ```
+
+------------------------------------------------------------------------
+
+## 🧩 Fase II — Analizador Léxico Completo
+
+La Fase II completa el análisis léxico básico del proyecto. En esta
+etapa, el analizador ya no clasifica todas las palabras como
+identificadores, sino que consulta una tabla de palabras reservadas y
+asigna el token correspondiente cuando el lexema pertenece al lenguaje C
+o a palabras comunes de C/C++.
+
+También se agregó el reconocimiento de números enteros y reales,
+comentarios, operadores compuestos y errores léxicos más específicos.
+
+### Palabras reservadas implementadas
+
+El analizador reconoce las palabras reservadas principales de C:
+
+`auto`, `break`, `case`, `char`, `const`, `continue`, `default`, `do`,
+`double`, `else`, `enum`, `extern`, `float`, `for`, `goto`, `if`, `int`,
+`long`, `register`, `return`, `short`, `signed`, `sizeof`, `static`,
+`struct`, `switch`, `typedef`, `union`, `unsigned`, `void`, `volatile` y
+`while`.
+
+Además, se agregaron palabras comunes de C/C++:
+
+`include`, `define`, `using`, `namespace`, `class`, `public`, `private`,
+`protected`, `new`, `delete`, `true`, `false`, `cout`, `cin` y `endl`.
+
+### Números enteros y reales
+
+Los números enteros se registran con token `301` y tipo `NumeroEntero`.
+Los números reales se registran con token `302` y tipo `NumeroReal`,
+siempre que tengan un solo punto decimal y al menos un dígito después
+del punto.
+
+Ejemplos válidos:
+
+-   `10`
+-   `25`
+-   `3.14`
+-   `0.5`
+-   `100.00`
+
+### Comentarios
+
+Los comentarios de línea inician con `//` y se leen hasta antes del
+salto de línea. Se registran con token `400` y tipo
+`ComentarioLinea`.
+
+Los comentarios de bloque inician con `/*` y terminan con `*/`. Pueden
+abarcar varias líneas y se registran con token `401` y tipo
+`ComentarioBloque`.
+
+### Operadores compuestos
+
+| Lexema | Token | Tipo |
+|---|---:|---|
+| ++ | 110 | Simbolo |
+| -- | 111 | Simbolo |
+| == | 112 | Simbolo |
+| != | 113 | Simbolo |
+| <= | 114 | Simbolo |
+| >= | 115 | Simbolo |
+| && | 116 | Simbolo |
+| \|\| | 117 | Simbolo |
+| += | 118 | Simbolo |
+| -= | 119 | Simbolo |
+| *= | 120 | Simbolo |
+| /= | 121 | Simbolo |
+
+### Errores léxicos de Fase II
+
+El analizador marca con token `-1` y tipo `ErrorLexico` los números mal
+formados y los comentarios de bloque incompletos. Por ejemplo:
+
+-   `10.5.3`
+-   `12abc`
+-   `8.`
+-   `/* comentario sin cerrar`
 
 ------------------------------------------------------------------------
 
@@ -228,6 +313,7 @@ v1.0-precompilador
 Esta versión contiene el código funcional completo del pre-compilador
 MicroC.
 
-Actualización: se implementó la Fase I del analizador léxico. La Fase II
-queda pendiente para completar palabras reservadas, números reales y
-comentarios.
+Actualización: se completó la Fase II del analizador léxico. El sistema
+ahora reconoce palabras reservadas, números enteros y reales,
+comentarios de línea y bloque, operadores compuestos y errores léxicos
+para números mal formados o comentarios de bloque incompletos.

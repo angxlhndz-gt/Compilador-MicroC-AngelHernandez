@@ -17,6 +17,10 @@ public class TokenLexico
 
     public override string ToString()
     {
-        return $"Linea: {Linea}    Lexema: {Lexema}    Token: {Token}    Tipo: {Tipo}";
+        string lexemaVisible = Lexema
+            .Replace("\r", "\\r")
+            .Replace("\n", "\\n");
+
+        return $"Linea: {Linea}    Lexema: {lexemaVisible}    Token: {Token}    Tipo: {Tipo}";
     }
 }
