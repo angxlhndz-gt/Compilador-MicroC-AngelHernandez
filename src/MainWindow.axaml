@@ -14,9 +14,9 @@
             <Button Content="Abrir" Width="80" Margin="5" Click="Abrir_Click"/>
             <Button Content="Guardar" Width="80" Margin="5" Click="Guardar_Click"/>
             <Button Content="Editar" Width="80" Margin="5" Click="Editar_Click"/>
-            <Button Content="Compilar" Click="Compilar_Click"/>
+            <Button Content="Compilar" Width="90" Margin="5" Click="Compilar_Click"/>
             <Button Content="Ayuda" Width="80" Margin="5" Click="Ayuda_Click"/>
-            <Button Content="Salir" Click="Salir_Click"/>
+            <Button Content="Salir" Width="80" Margin="5" Click="Salir_Click"/>
 
         </StackPanel>
 

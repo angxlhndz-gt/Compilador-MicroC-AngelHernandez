@@ -3,6 +3,7 @@ using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Avalonia.Layout;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MicroC;
@@ -156,63 +157,65 @@ public partial class MainWindow : Window
         var resultado = await dialog.ShowDialog<bool>(this);
         return resultado;
     }
+
     private void Compilar_Click(object? sender, RoutedEventArgs e)
-{
-    string codigo = EditorTextBox.Text ?? "";
-
-    if (string.IsNullOrWhiteSpace(codigo))
     {
-        OutputTextBox.Text = "Error: No hay código para compilar.";
-        return;
+        string codigo = EditorTextBox.Text ?? "";
+
+        if (string.IsNullOrWhiteSpace(codigo))
+        {
+            OutputTextBox.Text = "Error: No hay código para analizar.";
+            return;
+        }
+
+        var analizador = new AnalizadorLexico();
+        var tokens = analizador.AnalisisLexico(codigo);
+        var salida = new StringBuilder();
+        int erroresLexicos = 0;
+
+        foreach (var token in tokens)
+        {
+            salida.AppendLine(token.ToString());
+
+            if (token.Tipo == "ErrorLexico")
+            {
+                erroresLexicos++;
+            }
+        }
+
+        salida.AppendLine();
+        salida.AppendLine($"Total de tokens: {tokens.Count}");
+        salida.AppendLine($"Errores léxicos: {erroresLexicos}");
+
+        OutputTextBox.Text = salida.ToString();
     }
 
-    if (!codigo.Contains("int main"))
+    private async void Ayuda_Click(object? sender, RoutedEventArgs e)
     {
-        OutputTextBox.Text = "Error: Falta la función principal 'int main()'.";
-        return;
+        var dialog = new Window
+        {
+            Width = 400,
+            Height = 300,
+            Title = "Ayuda - MicroC",
+            WindowStartupLocation = WindowStartupLocation.CenterOwner
+        };
+
+        var text = new TextBlock
+        {
+            Text =
+            "MicroC - Pre-Compilador\n\n" +
+            "Instrucciones:\n" +
+            "- Escribe código en el editor superior.\n" +
+            "- Usa Nuevo, Abrir, Guardar y Editar para manejar archivos.\n" +
+            "- Presiona Compilar para ejecutar el análisis léxico.\n" +
+            "- La salida muestra línea, lexema, token y tipo.\n\n" +
+            "Los errores léxicos se reportan sin detener el análisis.",
+            Margin = new Avalonia.Thickness(15),
+            TextWrapping = Avalonia.Media.TextWrapping.Wrap
+        };
+
+        dialog.Content = text;
+
+        await dialog.ShowDialog(this);
     }
-
-    if (!codigo.Contains("{") || !codigo.Contains("}"))
-    {
-        OutputTextBox.Text = "Error: Llaves incompletas.";
-        return;
-    }
-
-    if (codigo.Contains("return 0") && !codigo.Contains("return 0;"))
-    {
-        OutputTextBox.Text = "Error: Falta punto y coma en 'return 0'.";
-        return;
-    }
-
-    OutputTextBox.Text = "Compilación exitosa.\nNo se encontraron errores.";
-}
-
-private async void Ayuda_Click(object? sender, RoutedEventArgs e)
-{
-    var dialog = new Window
-    {
-        Width = 400,
-        Height = 300,
-        Title = "Ayuda - MicroC",
-        WindowStartupLocation = WindowStartupLocation.CenterOwner
-    };
-
-    var text = new TextBlock
-    {
-        Text =
-        "MicroC - Pre-Compilador\n\n" +
-        "Instrucciones:\n" +
-        "- Escribe código en el editor superior.\n" +
-        "- Usa 'int main()' como función principal.\n" +
-        "- Verifica que las llaves estén completas.\n" +
-        "- Asegúrate de usar punto y coma (;).\n\n" +
-        "Luego presiona 'Compilar' para verificar errores.",
-        Margin = new Avalonia.Thickness(15),
-        TextWrapping = Avalonia.Media.TextWrapping.Wrap
-    };
-
-    dialog.Content = text;
-
-    await dialog.ShowDialog(this);
-}
 }
