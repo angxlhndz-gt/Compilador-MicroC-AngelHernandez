@@ -315,19 +315,19 @@ El repositorio está organizado de la siguiente manera:
 
 ## 📄 Documentación
 
-La documentación completa del proyecto, incluyendo el manual de usuario, descripción técnica y capturas de pantalla, se encuentra disponible en la carpeta /docs/ dentro de este repositorio.
+La documentación completa del proyecto se encuentra disponible en la
+carpeta `/docs/` dentro de este repositorio. En esa carpeta están los
+documentos principales del compilador MicroC:
 
-En dicha carpeta se incluyen:
-
-Manual de Usuario en formato Word (.docx)
-
-PDF del compilador usado por el botón Ayuda (`COMPILADOR2026.pdf`)
-
-Árboles de decisión de Fase I y Fase II
-
-Capturas de pantalla del sistema
-
-Documentación complementaria del proyecto
+-   `Manual_De_Usuario.docx` y `Manual_De_Usuario.pdf`: manual de usuario
+    con instrucciones para utilizar la aplicación.
+-   `Documentacion_Compilador_MicroC.docx` y
+    `Documentacion_Compilador_MicroC.pdf`: documentación técnica del
+    proyecto y del funcionamiento del analizador léxico.
+-   `COMPILADOR2026.pdf`: PDF del compilador usado por el botón Ayuda de
+    la interfaz.
+-   `ArbolDecisionesFase1.png` y `ArbolDecisionesFase2.png`: árboles de
+    decisión de la Fase I y Fase II.
 
 ## 🚀 Versión Final
 
