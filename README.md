@@ -32,7 +32,8 @@ El sistema analiza el código ingresado y realiza:
 -   Detección básica de errores léxicos
 
 También incluye control de edición, confirmación de salida con cambios
-sin guardar y ventana de ayuda integrada.
+sin guardar y un botón de ayuda que abre el PDF del compilador desde la
+carpeta `docs`.
 
 ------------------------------------------------------------------------
 
@@ -197,6 +198,21 @@ formados y los comentarios de bloque incompletos. Por ejemplo:
 
 ------------------------------------------------------------------------
 
+## 🌳 Árboles de Decisión
+
+Los árboles de decisión del analizador léxico se encuentran en la carpeta
+`docs` y documentan el flujo usado en la Fase I y Fase II.
+
+### Fase I
+
+![Árbol de Decisión Fase I](docs/ArbolDecisionesFase1.png)
+
+### Fase II
+
+![Árbol de Decisión Fase II](docs/ArbolDecisionesFase2.png)
+
+------------------------------------------------------------------------
+
 ## ▶ Instrucciones de Ejecución
 
 ### 🔹 Ejecutar desde el código fuente
@@ -305,6 +321,10 @@ En dicha carpeta se incluyen:
 
 Manual de Usuario en formato Word (.docx)
 
+PDF del compilador usado por el botón Ayuda (`COMPILADOR2026.pdf`)
+
+Árboles de decisión de Fase I y Fase II
+
 Capturas de pantalla del sistema
 
 Documentación complementaria del proyecto
@@ -322,3 +342,8 @@ Actualización: se completó la Fase II del analizador léxico. El sistema
 ahora reconoce palabras reservadas, números enteros y reales,
 comentarios de línea y bloque, operadores compuestos y errores léxicos
 para números mal formados o comentarios de bloque incompletos.
+
+Actualización reciente: se agregó documentación interna con comentarios
+en el código del analizador léxico, se añadió el botón Ayuda para abrir
+el PDF `docs/COMPILADOR2026.pdf` y se incorporaron los árboles de
+decisión de Fase I y Fase II dentro de la documentación del repositorio.

@@ -4,6 +4,7 @@ namespace MicroC;
 
 public class UnidadesLexicas
 {
+    // Tabla de simbolos validos.
     private readonly Dictionary<string, int> simbolosSimples = new()
     {
         { "(", 75 },
@@ -39,6 +40,7 @@ public class UnidadesLexicas
         { "/=", 121 }
     };
 
+    // Tabla de palabras reservadas.
     private readonly Dictionary<string, int> palabrasReservadas = new()
     {
         { "auto", 1 },
@@ -90,6 +92,7 @@ public class UnidadesLexicas
         { "endl", 54 }
     };
 
+    // Buscar palabra reservada; si no existe, es identificador.
     public int GetTokenPalabra(string lexema)
     {
         if (palabrasReservadas.TryGetValue(lexema, out int token))
@@ -100,6 +103,7 @@ public class UnidadesLexicas
         return 300;
     }
 
+    // Buscar simbolo; si no existe, es invalido.
     public int GetTokenSimbolo(string lexema)
     {
         if (simbolosSimples.TryGetValue(lexema, out int token))

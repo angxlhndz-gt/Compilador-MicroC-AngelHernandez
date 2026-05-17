@@ -18,4 +18,10 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../docs/COMPILADOR2026.pdf"
+          Link="docs/COMPILADOR2026.pdf"
+          CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>

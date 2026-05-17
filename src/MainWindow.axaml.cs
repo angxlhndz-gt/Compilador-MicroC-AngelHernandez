@@ -2,6 +2,8 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Avalonia.Layout;
+using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,8 @@ namespace MicroC;
 
 public partial class MainWindow : Window
 {
+    private const string ArchivoAyuda = "COMPILADOR2026.pdf";
+
     private string? archivoActual = null;
     private bool hayCambios = false;
 
@@ -168,11 +172,13 @@ public partial class MainWindow : Window
             return;
         }
 
+        // Ejecutar analizador lexico.
         var analizador = new AnalizadorLexico();
         var tokens = analizador.AnalisisLexico(codigo);
         var salida = new StringBuilder();
         int erroresLexicos = 0;
 
+        // Mostrar tokens y contar errores lexicos.
         foreach (var token in tokens)
         {
             salida.AppendLine(token.ToString());
@@ -190,32 +196,52 @@ public partial class MainWindow : Window
         OutputTextBox.Text = salida.ToString();
     }
 
-    private async void Ayuda_Click(object? sender, RoutedEventArgs e)
+    private void Ayuda_Click(object? sender, RoutedEventArgs e)
     {
-        var dialog = new Window
+        var rutaPdf = ObtenerRutaPdfAyuda();
+
+        if (rutaPdf == null)
         {
-            Width = 400,
-            Height = 300,
-            Title = "Ayuda - MicroC",
-            WindowStartupLocation = WindowStartupLocation.CenterOwner
+            OutputTextBox.Text = "No se encontro el PDF de ayuda en la carpeta docs.";
+            return;
+        }
+
+        try
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = rutaPdf,
+                UseShellExecute = true
+            });
+
+            OutputTextBox.Text = $"Abriendo ayuda: {Path.GetFileName(rutaPdf)}";
+        }
+        catch (Exception ex)
+        {
+            OutputTextBox.Text = $"No se pudo abrir el PDF de ayuda: {ex.Message}";
+        }
+    }
+
+    private static string? ObtenerRutaPdfAyuda()
+    {
+        string[] rutas =
+        {
+            Path.Combine(Directory.GetCurrentDirectory(), "docs", ArchivoAyuda),
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "docs", ArchivoAyuda),
+            Path.Combine(AppContext.BaseDirectory, "docs", ArchivoAyuda),
+            Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "docs", ArchivoAyuda)
         };
 
-        var text = new TextBlock
+        foreach (var ruta in rutas)
         {
-            Text =
-            "MicroC - Pre-Compilador\n\n" +
-            "Instrucciones:\n" +
-            "- Escribe código en el editor superior.\n" +
-            "- Usa Nuevo, Abrir, Guardar y Editar para manejar archivos.\n" +
-            "- Presiona Compilar para ejecutar el análisis léxico.\n" +
-            "- La salida muestra línea, lexema, token y tipo.\n\n" +
-            "Los errores léxicos se reportan sin detener el análisis.",
-            Margin = new Avalonia.Thickness(15),
-            TextWrapping = Avalonia.Media.TextWrapping.Wrap
-        };
+            var rutaCompleta = Path.GetFullPath(ruta);
 
-        dialog.Content = text;
+            if (File.Exists(rutaCompleta))
+            {
+                return rutaCompleta;
+            }
+        }
 
-        await dialog.ShowDialog(this);
+        return null;
     }
 }
