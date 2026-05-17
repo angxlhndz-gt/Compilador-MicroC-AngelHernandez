@@ -2,7 +2,7 @@
 
 ## 📌 Portada 
 
-**Nombre completo:** Angel Hernández\
+**Nombre completo:** Jose Angel Moreno Hernández\
 **Número de carné:** 202425514\
 **Curso:** Autómatas y Lenguajes\
 **Proyecto:** Compilador MicroC
@@ -282,22 +282,22 @@ También puede ejecutarse desde el acceso directo creado en el escritorio
 
 ![Errores léxicos](assets/errores_lexicos.png)
 
-Las imágenes estan almacenadas en la carpeta `/assets/` según la estructura solicitada.
+Las imágenes están almacenadas en la carpeta `/assets/` según la estructura solicitada.
 
 ------------------------------------------------------------------------
 
-## 🎥 Enlace al Video Demostrativo
+## 🎥 Videos Demostrativos
 
-El video demostrativo muestra:
+Los videos demostrativos del proyecto se dividieron en tres partes para explicar de forma ordenada el funcionamiento del compilador MicroC, el árbol de decisión utilizado y la demostración funcional del analizador léxico.
 
--   Creación de archivo nuevo
--   Edición de código
--   Guardado de archivo
--   Ejecución del análisis léxico
--   Detección de errores léxicos
--   Funcionamiento del botón Ayuda
+- [Video 01 - Fase I Árbol de Decisión MicroC](https://youtu.be/OJO1N2i6aJI)  
+  Explicación del árbol de decisión utilizado en la Fase I del analizador léxico.
 
-🔗 Enlace al video: https://youtu.be/8Fx_sU_dBjY
+- [Video 02 - Fase II Árbol y Autómatas MicroC](https://youtu.be/vvKoWBuMEAs)  
+  Explicación del árbol de decisión de Fase II y de los autómatas implementados para palabras reservadas, números enteros/reales y comentarios.
+
+- [Video 03 - Demo Funcional Compilador MicroC](https://youtu.be/acdE15tPMkc)  
+  Demostración funcional del programa, mostrando reconocimiento de palabras reservadas, identificadores, números enteros y reales, comentarios, operadores y errores léxicos.
 
 ------------------------------------------------------------------------
 
